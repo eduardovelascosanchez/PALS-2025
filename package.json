@@ -1,0 +1,15 @@
+{
+  "name": "pals-2025-pwa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PWA educativa PALS 2025 lista para GitHub Pages.",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate.mjs",
+    "check": "npm run test && npm run validate"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

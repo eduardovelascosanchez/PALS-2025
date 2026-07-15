@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#12304a">
+    <meta name="description" content="Guía educativa PALS 2025 con algoritmos, calculadora y simulador. Funciona sin conexión.">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PALS 2025">
+    <title>Guía PALS 2025 | EDUVESA</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegación principal">
+        <div class="brand">
+          <img src="./assets/icons/icon.svg" alt="" width="46" height="46">
+          <div>
+            <span class="brand__eyebrow">EDUVESA</span>
+            <strong>Guía PALS 2025</strong>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <button class="nav-item is-active" type="button" data-view="inicio" aria-current="page">
+            <span aria-hidden="true">⌂</span> Inicio
+          </button>
+          <button class="nav-item" type="button" data-view="algoritmos">
+            <span aria-hidden="true">↪</span> Algoritmos
+          </button>
+          <button class="nav-item" type="button" data-view="calculadora">
+            <span aria-hidden="true">∑</span> Calculadora
+          </button>
+          <button class="nav-item" type="button" data-view="simulacion">
+            <span aria-hidden="true">◉</span> Simulación
+          </button>
+          <button class="nav-item" type="button" data-view="referencias">
+            <span aria-hidden="true">≡</span> Referencias
+          </button>
+        </nav>
+
+        <div class="sidebar__footer">
+          <span id="connection-status" class="status-chip" role="status">Comprobando conexión</span>
+          <button id="install-button" class="button button--secondary button--full" type="button" hidden>
+            Instalar aplicación
+          </button>
+          <p>Herramienta educativa independiente. No sustituye juicio clínico, protocolos locales ni materiales oficiales.</p>
+        </div>
+      </aside>
+
+      <main id="main-content" class="main" tabindex="-1">
+        <header class="topbar">
+          <div>
+            <p class="kicker">Soporte vital avanzado pediátrico</p>
+            <h1 id="page-title">Panel clínico educativo</h1>
+          </div>
+          <div class="topbar__meta">
+            <span class="review-badge">Revisión clínica: <strong id="review-date">—</strong></span>
+            <button id="menu-button" class="icon-button" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+          </div>
+        </header>
+
+        <div id="update-banner" class="update-banner" role="status" hidden>
+          Hay una actualización disponible.
+          <button id="update-button" type="button">Actualizar ahora</button>
+        </div>
+
+        <section id="view-inicio" class="view is-active" data-view-panel="inicio" aria-labelledby="home-heading">
+          <div class="hero">
+            <div class="hero__content">
+              <span class="pill pill--light">PWA · sin conexión · GitHub Pages</span>
+              <h2 id="home-heading">Decisiones críticas, visibles en segundos.</h2>
+              <p>Consulta resúmenes clínicos, calcula dosis y energía por peso, y documenta una simulación sin salir de la aplicación.</p>
+              <div class="button-row">
+                <button class="button button--light" type="button" data-go="algoritmos">Abrir algoritmos</button>
+                <button class="button button--ghost-light" type="button" data-go="calculadora">Calcular por peso</button>
+              </div>
+            </div>
+            <div class="hero__mark" aria-hidden="true">
+              <span>100–120</span>
+              <small>compresiones/min</small>
+            </div>
+          </div>
+
+          <div class="safety-note" role="note">
+            <span class="safety-note__icon" aria-hidden="true">!</span>
+            <div>
+              <strong>Uso seguro</strong>
+              <p>Confirma peso, concentración, dosis máxima, dispositivo y protocolo institucional antes de administrar un fármaco o descargar energía.</p>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <p class="kicker">Acceso rápido</p>
+              <h2>Rutas de trabajo</h2>
+            </div>
+          </div>
+
+          <div class="quick-grid">
+            <button class="quick-card quick-card--red" type="button" data-algorithm="cardiac-arrest">
+              <span class="quick-card__icon" aria-hidden="true">♥</span>
+              <strong>Paro cardiaco</strong>
+              <small>FV/TVSP · Asistolia/AESP</small>
+            </button>
+            <button class="quick-card quick-card--amber" type="button" data-algorithm="bradycardia">
+              <span class="quick-card__icon" aria-hidden="true">↓</span>
+              <strong>Bradicardia</strong>
+              <small>Con pulso y compromiso</small>
+            </button>
+            <button class="quick-card quick-card--blue" type="button" data-algorithm="tachyarrhythmia">
+              <span class="quick-card__icon" aria-hidden="true">↑</span>
+              <strong>Taquiarritmia</strong>
+              <small>Estable · inestable</small>
+            </button>
+            <button class="quick-card quick-card--teal" type="button" data-algorithm="post-rosc">
+              <span class="quick-card__icon" aria-hidden="true">✓</span>
+              <strong>Cuidados posparo</strong>
+              <small>Oxigenación · perfusión · TTM</small>
+            </button>
+          </div>
+
+          <div class="two-column">
+            <article class="card">
+              <div class="card__header">
+                <div>
+                  <p class="kicker">RCP de alta calidad</p>
+                  <h3>Recordatorio esencial</h3>
+                </div>
+                <span class="metric-badge">2 min</span>
+              </div>
+              <ul class="check-list">
+                <li>Profundidad de al menos un tercio del diámetro anteroposterior.</li>
+                <li>Frecuencia de 100 a 120/min y retroceso torácico completo.</li>
+                <li>Minimizar interrupciones y cambiar compresor cada 2 minutos.</li>
+                <li>Con vía aérea avanzada: 1 ventilación cada 2–3 segundos.</li>
+              </ul>
+            </article>
+            <article class="card card--accent">
+              <p class="kicker">Preparación de equipo</p>
+              <h3>Inicia una práctica guiada</h3>
+              <p>El simulador registra ciclos, intervenciones y puntos para debriefing. No solicita datos identificables de pacientes.</p>
+              <button class="text-link" type="button" data-go="simulacion">Abrir simulador <span aria-hidden="true">→</span></button>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-algoritmos" class="view" data-view-panel="algoritmos" aria-labelledby="algorithms-heading" hidden>
+          <div class="section-heading section-heading--stack-mobile">
+            <div>
+              <p class="kicker">Consulta rápida</p>
+              <h2 id="algorithms-heading">Algoritmos resumidos</h2>
+              <p class="section-copy">Redacción original basada en algoritmos AHA/AAP 2025; no reproduce los diagramas oficiales.</p>
+            </div>
+            <label class="search-field">
+              <span class="sr-only">Buscar en algoritmos</span>
+              <input id="algorithm-search" type="search" placeholder="Buscar: epinefrina, vía aérea…" autocomplete="off">
+            </label>
+          </div>
+          <div id="algorithm-tabs" class="segmented" role="tablist" aria-label="Algoritmos PALS"></div>
+          <div id="algorithm-content" class="algorithm-layout" aria-live="polite"></div>
+        </section>
+
+        <section id="view-calculadora" class="view" data-view-panel="calculadora" aria-labelledby="calculator-heading" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="kicker">Cálculos de apoyo</p>
+              <h2 id="calculator-heading">Dosis y energía por peso</h2>
+              <p class="section-copy">Muestra cantidades teóricas de los algoritmos 2025 y aplica los máximos explícitos.</p>
+            </div>
+          </div>
+
+          <div class="calculator-grid">
+            <form id="calculator-form" class="card calculator-inputs" novalidate>
+              <label for="weight">Peso en kilogramos</label>
+              <div class="weight-input">
+                <input id="weight" name="weight" type="number" inputmode="decimal" min="0.5" max="200" step="0.1" placeholder="Ej. 18" required>
+                <span>kg</span>
+              </div>
+              <p id="weight-error" class="field-error" role="alert"></p>
+              <div class="preset-row" aria-label="Pesos de ejemplo">
+                <button type="button" data-weight="5">5 kg</button>
+                <button type="button" data-weight="10">10 kg</button>
+                <button type="button" data-weight="20">20 kg</button>
+                <button type="button" data-weight="40">40 kg</button>
+              </div>
+              <button class="button button--primary button--full" type="submit">Calcular</button>
+              <button id="clear-calculator" class="button button--secondary button--full" type="button">Limpiar</button>
+              <div class="mini-warning">
+                <strong>Doble verificación obligatoria</strong>
+                <span>Las concentraciones disponibles y los protocolos pueden variar.</span>
+              </div>
+            </form>
+
+            <div id="calculator-results" class="results-panel" aria-live="polite">
+              <div class="empty-state">
+                <span aria-hidden="true">∑</span>
+                <h3>Introduce el peso</h3>
+                <p>Los resultados aparecerán organizados por paro, bradicardia y taquiarritmia.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="view-simulacion" class="view" data-view-panel="simulacion" aria-labelledby="simulation-heading" hidden>
+          <div class="section-heading section-heading--stack-mobile">
+            <div>
+              <p class="kicker">Entrenamiento deliberado</p>
+              <h2 id="simulation-heading">Simulador y registro</h2>
+              <p class="section-copy">Usa identificadores ficticios. La sesión se conserva solo en este navegador.</p>
+            </div>
+            <button id="new-session" class="button button--secondary" type="button">Nueva sesión</button>
+          </div>
+
+          <div class="simulation-grid">
+            <article class="card scenario-panel">
+              <label for="scenario-select">Escenario</label>
+              <select id="scenario-select"></select>
+              <div id="scenario-brief" class="scenario-brief"></div>
+              <div class="scenario-meta">
+                <label for="simulation-weight">Peso de simulación</label>
+                <div class="weight-input weight-input--small">
+                  <input id="simulation-weight" type="number" inputmode="decimal" min="0.5" max="200" step="0.1">
+                  <span>kg</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card timer-panel">
+              <p class="kicker">Cronómetro</p>
+              <div id="timer-display" class="timer" aria-live="off">00:00</div>
+              <div id="cycle-display" class="cycle-label">Ciclo 1</div>
+              <div class="button-row button-row--center">
+                <button id="timer-toggle" class="button button--primary" type="button">Iniciar</button>
+                <button id="timer-reset" class="button button--secondary" type="button">Reiniciar</button>
+              </div>
+              <div id="epi-window" class="epi-window">Registra la primera epinefrina para iniciar el intervalo de 3–5 min.</div>
+            </article>
+          </div>
+
+          <article class="card event-panel">
+            <div class="card__header">
+              <div>
+                <p class="kicker">Intervenciones</p>
+                <h3>Registro rápido</h3>
+              </div>
+              <button id="undo-event" class="text-button" type="button">Deshacer último</button>
+            </div>
+            <div id="event-actions" class="event-actions">
+              <button type="button" data-event="Inicio/continuación de RCP">RCP</button>
+              <button type="button" data-event="Ventilación/vía aérea">Vía aérea</button>
+              <button type="button" data-event="Descarga">Descarga</button>
+              <button type="button" data-event="Epinefrina">Epinefrina</button>
+              <button type="button" data-event="Amiodarona/lidocaína">Antiarrítmico</button>
+              <button type="button" data-event="ROSC">ROSC</button>
+            </div>
+            <ol id="event-log" class="event-log" aria-label="Eventos registrados"></ol>
+          </article>
+
+          <div class="two-column">
+            <article class="card notes-panel">
+              <label for="simulation-notes">Notas del escenario</label>
+              <textarea id="simulation-notes" rows="8" placeholder="Evaluación, intervenciones, respuesta y evolución…"></textarea>
+              <div class="button-row">
+                <button id="copy-session" class="button button--secondary" type="button">Copiar resumen</button>
+                <button id="download-session" class="button button--primary" type="button">Descargar .md</button>
+              </div>
+            </article>
+            <article class="card debrief-panel">
+              <p class="kicker">Debriefing</p>
+              <h3>Preguntas guía</h3>
+              <ol>
+                <li>¿Qué observó el equipo y qué decisiones tomó?</li>
+                <li>¿Qué favoreció o dificultó la RCP de alta calidad?</li>
+                <li>¿El tratamiento correspondió al ritmo y al momento?</li>
+                <li>¿Qué cambio concreto aplicará el equipo en el próximo caso?</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-referencias" class="view" data-view-panel="referencias" aria-labelledby="references-heading" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="kicker">Trazabilidad clínica</p>
+              <h2 id="references-heading">Fuentes y alcance</h2>
+              <p class="section-copy">Enlaces a fuentes primarias y documentos oficiales utilizados en la revisión.</p>
+            </div>
+          </div>
+          <div class="two-column two-column--references">
+            <div id="source-list" class="source-list"></div>
+            <article class="card governance-card">
+              <p class="kicker">Gobernanza</p>
+              <h3>Cómo interpretar esta guía</h3>
+              <ul class="check-list">
+                <li>No es una certificación, manual oficial ni dispositivo médico.</li>
+                <li>Los resúmenes no sustituyen el algoritmo completo ni el entrenamiento PALS.</li>
+                <li>Antes de cada versión se requiere revisión clínica documentada.</li>
+                <li>Los datos de simulación permanecen en el dispositivo hasta borrarlos.</li>
+              </ul>
+              <dl class="metadata-list">
+                <div><dt>Versión</dt><dd id="app-version">—</dd></div>
+                <div><dt>Base científica</dt><dd>AHA/AAP 2025</dd></div>
+                <div><dt>Última revisión</dt><dd id="review-date-full">—</dd></div>
+              </dl>
+            </article>
+          </div>
+        </section>
+
+        <footer class="app-footer">
+          <p>© 2026 EDUVESA · Proyecto educativo independiente.</p>
+          <p>PALS es una marca de la American Heart Association. No existe afiliación ni aval implícito.</p>
+        </footer>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>

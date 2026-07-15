@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Guía PALS 2025</title>
+  <desc id="desc">Corazón blanco con trazo electrocardiográfico sobre fondo azul</desc>
+  <defs>
+    <linearGradient id="bg" x1="40" y1="25" x2="470" y2="490" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#194f70"/>
+      <stop offset="1" stop-color="#0b2031"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="250" r="166" fill="#fff" opacity=".07"/>
+  <path d="M256 389C154 326 108 278 108 207c0-57 41-98 96-98 34 0 58 17 75 42 17-25 41-42 75-42 55 0 96 41 96 98 0 71-46 119-148 182l-23 14-23-14Z" fill="#f7fbfc"/>
+  <path d="M119 257h82l24-67 43 133 31-81 21 38h75" fill="none" stroke="#c43d4c" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
